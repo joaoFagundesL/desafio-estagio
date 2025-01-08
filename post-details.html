@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Details</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="top-nav">
+          <div class="top-nav-left-div">
+            <span><a href="#" id="home-link">Blog do João</a></span>
+          </div>
+
+          <div class="top-nav-right-div">
+            <span><a href="#" class="post-link" data-id="1">teste1</a></span>
+            <span><a href="#" class="post-link" data-id="2">teste2</a></span>
+          </div>
+        </nav>
+
+        <span class="back"><a href="index.html">Back to Blog</a></span>
+      </header>
+
+      <div id="post-detail-container"></div>
+    </main>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get("id");
+
+      fetch(`http://localhost:5050/api/v1/post/list/${postId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success && data.postDetails) {
+            const post = data.postDetails[0]; // Assuming you get the post data here
+            const postDetailContainer = document.getElementById(
+              "post-detail-container",
+            );
+
+            const postContent = `
+            <h2 class="post-detail-title">${post.title}</h2>
+            <span class="post-detail-published">Published on: ${new Date(post.publicationDate).toLocaleDateString()}</span>
+            <p class="post-detail-description">${post.body || "No content available"}</p>
+          `;
+            postDetailContainer.innerHTML = postContent;
+          } else {
+            document.getElementById("post-detail-container").innerHTML =
+              "<p>Post not found.</p>";
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching the post:", error);
+          document.getElementById("post-detail-container").innerHTML =
+            "<p>Error loading post.</p>";
+        });
+    </script>
+  </body>
+</html>

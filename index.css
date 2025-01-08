@@ -1,0 +1,98 @@
+a {
+  all: unset;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+span {
+  color: #9b9c9d;
+}
+
+body {
+  margin: auto;
+  max-width: 48rem;
+  padding: 1.5rem;
+}
+
+main {
+  height: 100vh;
+  padding-top: 2rem;
+}
+
+.top-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.joao-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#home-link {
+  font-size: 1.2rem;
+}
+
+.boas-vindas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 5rem;
+}
+
+.welcome-title {
+  font-size: 32px;
+  color: #bfbfc0;
+}
+
+.linkedin-icon,
+.mail-icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.posts {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-structure {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 5px;
+  background-color: #2e2e33;
+  padding: 1rem;
+}
+
+#post-detail-container {
+  margin-top: 3rem;
+}
+
+.back {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.post-detail-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.post-detail-published {
+  text-align: center;
+  display: block;
+}
+
+.post-detail-description {
+  margin-top: 2rem;
+}

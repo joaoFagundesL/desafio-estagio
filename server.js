@@ -3,11 +3,13 @@ const colors = require("colors"); //better looking infos
 const morgan = require("morgan"); //middleware loggin
 const dotenv = require("dotenv");
 const mysqlPool = require("./config/db");
+const cors = require("cors");
 
 //setting dotenv
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 //middlewares
 //
