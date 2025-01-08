@@ -15,6 +15,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //routes
+app.use("/api/v1/post", require("./routes/postRoutes"));
+
 app.get("/test", (req, res) => {
   res.status(200).send("<h1>estagio</h1>");
 });
