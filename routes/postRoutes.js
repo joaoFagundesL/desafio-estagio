@@ -16,4 +16,7 @@ router.get("/list/:id", getPostById);
 //CREATE post
 router.post("/create", createPost);
 
+//DELETE post
+
+//UPDATE post
 module.exports = router;

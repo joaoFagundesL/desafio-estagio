@@ -1,16 +1,51 @@
 a {
   all: unset;
+  cursor: pointer;
 }
 * {
   padding: 0px;
   margin: 0px;
 }
 
-span {
+p,
+span,
+label {
   color: #9b9c9d;
 }
 
+button {
+  background-color: #2e2e33;
+  padding: 0.5rem;
+  color: #9ec9f6;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  align-self: flex-start;
+  width: 30%;
+}
+
+input,
+textarea {
+  background-color: #2e2e33;
+  color: #9b9c9d;
+  border: none;
+  padding: 0.8rem;
+  font-size: 18px;
+}
+
+textarea {
+  height: 80px;
+}
+
+input:focus,
+textarea:focus {
+  border: none;
+  outline: none;
+}
+
 body {
+  background-color: #1d1e20;
+
   margin: auto;
   max-width: 48rem;
   padding: 1.5rem;
@@ -44,9 +79,18 @@ main {
   margin-top: 5rem;
 }
 
+.create-new-post {
+  text-decoration: underline;
+  color: #9ec9f6;
+}
+
+h2,
+h3 {
+  color: #bfbfc0;
+}
+
 .welcome-title {
   font-size: 32px;
-  color: #bfbfc0;
 }
 
 .linkedin-icon,
@@ -81,6 +125,7 @@ main {
 .back {
   text-decoration: underline;
   cursor: pointer;
+  color: #9ec9f6;
 }
 
 .post-detail-title {
@@ -95,4 +140,33 @@ main {
 
 .post-detail-description {
   margin-top: 2rem;
+}
+
+.post-image-delete,
+.post-image-edit {
+  width: 20px;
+  height: 20px;
+}
+
+.image-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  gap: 1rem;
+}
+
+#post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }

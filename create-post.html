@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Details</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="top-nav">
+          <div class="top-nav-left-div">
+            <img class="joao-icon" src="./images/joao.png" alt="" />
+            <span><a href="#" id="home-link">Blog do João</a></span>
+          </div>
+
+          <div class="top-nav-right-div">
+            <span><a href="#" class="post-link" data-id="1">Portfolio</a></span>
+            <span><a href="#" class="post-link" data-id="2">Currículo</a></span>
+          </div>
+        </nav>
+
+        <span class="back"><a href="index.html">Back to Blog</a></span>
+      </header>
+
+      <section class="form-container">
+        <form id="post-form">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <div id="post-create-container"></div>
+    </main>
+    <script src="./create-post.js"></script>
+  </body>
+</html>

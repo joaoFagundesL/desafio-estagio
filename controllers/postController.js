@@ -7,7 +7,7 @@ const getPosts = async (req, res) => {
   try {
     const data = await db.query("SELECT * FROM Blog");
 
-    if (!data) {
+    if (data[0].length === 0) {
       return res.status(404).send({
         success: false,
         message: "Nothing to show :(",
