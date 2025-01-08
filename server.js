@@ -1,6 +1,6 @@
 const express = require("express");
 const colors = require("colors"); //better looking infos
-const morgan = require("morgan"); //middleware loggin
+const morgan = require("morgan"); //middleware logging
 const dotenv = require("dotenv");
 const mysqlPool = require("./config/db");
 const cors = require("cors");
@@ -9,7 +9,8 @@ const cors = require("cors");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+app.use(cors({}));
 
 //middlewares
 //

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog do João</title>
-    <link href="index.css" rel="stylesheet" />
+    <link href="./styles/index.css" rel="stylesheet" />
   </head>
   <body>
     <main>
@@ -16,8 +16,18 @@
           </div>
 
           <div class="top-nav-right-div">
-            <span><a href="#" class="post-link" data-id="1">Portfolio</a></span>
-            <span><a href="#" class="post-link" data-id="2">Currículo</a></span>
+            <span
+              ><a
+                target="_blank"
+                href="https://joao-fagundes-portfolio.netlify.app/"
+                class="post-link"
+                data-id="1"
+                >Portfolio</a
+              ></span
+            >
+            <span
+              ><a href="#" class="post-link" data-id="2">Bug-free :)</a></span
+            >
           </div>
         </nav>
       </header>
@@ -25,16 +35,30 @@
       <section class="boas-vindas" id="boas-vindas-section">
         <h2 class="welcome-title">Bem Vindo</h2>
         <span>
-          Meu nome é João e esse é o blog que eu fiz para o desafio do estágio
+          Meu nome é João e esse é o blog que eu fiz para o desafio de estágio
           na scicrop. Espero que goste :)
         </span>
 
         <div class="icons">
-          <a href=""
-            ><img class="linkedin-icon" src="./images/linkedin.png" alt=""
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/joao-fagundes-5b6657222/"
+            ><img
+              class="linkedin-icon"
+              src="./images/linkedin.png"
+              alt="Linkedin"
           /></a>
-          <a href=""
-            ><img class="mail-icon" src="./images/mail.png" alt=""
+          <a href="mailto:joao.230702@alunos.utfpr.edu.br"
+            ><img class="mail-icon" src="./images/mail.png" alt="mail"
+          /></a>
+          <a target="_blank" href="https://github.com/joaoFagundesL"
+            ><img class="github-icon" src="./images/github.png" alt="github"
+          /></a>
+          <a target="_blank" href="https://leetcode.com/u/joaoFagundesL/"
+            ><img
+              class="leetcode-icon"
+              src="./images/leetcode.png"
+              alt="leetcode"
           /></a>
         </div>
 
@@ -44,6 +68,6 @@
       <section id="post-details" class="posts"></section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

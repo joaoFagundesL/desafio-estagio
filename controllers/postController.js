@@ -5,7 +5,7 @@ const db = require("../config/db");
 //GET all posts
 const getPosts = async (req, res) => {
   try {
-    const data = await db.query("SELECT * FROM Blog");
+    const data = await db.query("SELECT * FROM Blog ORDER BY publicationDate");
 
     if (data[0].length === 0) {
       return res.status(404).send({

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Details</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
     <main>
@@ -16,8 +16,18 @@
           </div>
 
           <div class="top-nav-right-div">
-            <span><a href="#" class="post-link" data-id="1">Portfolio</a></span>
-            <span><a href="#" class="post-link" data-id="2">Currículo</a></span>
+            <span
+              ><a
+                target="_blank"
+                href="https://joao-fagundes-portfolio.netlify.app/"
+                class="post-link"
+                data-id="1"
+                >Portfolio</a
+              ></span
+            >
+            <span
+              ><a href="#" class="post-link" data-id="2">Bug-free :)</a></span
+            >
           </div>
         </nav>
 
@@ -27,35 +37,6 @@
       <div id="post-detail-container"></div>
     </main>
 
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const postId = urlParams.get("id");
-
-      fetch(`http://localhost:5050/api/v1/post/list/${postId}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.success && data.postDetails) {
-            const post = data.postDetails[0]; // Assuming you get the post data here
-            const postDetailContainer = document.getElementById(
-              "post-detail-container",
-            );
-
-            const postContent = `
-            <h2 class="post-detail-title">${post.title}</h2>
-            <span class="post-detail-published">Published on: ${new Date(post.publicationDate).toLocaleDateString()}</span>
-            <p class="post-detail-description">${post.body || "No content available"}</p>
-          `;
-            postDetailContainer.innerHTML = postContent;
-          } else {
-            document.getElementById("post-detail-container").innerHTML =
-              "<p>Post not found.</p>";
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching the post:", error);
-          document.getElementById("post-detail-container").innerHTML =
-            "<p>Error loading post.</p>";
-        });
-    </script>
+    <script src="./scripts/post-details.js"></script>
   </body>
 </html>
