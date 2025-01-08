@@ -39,7 +39,7 @@ cd desafio-estagio
 
 # Criando Database
 
-**Por padrão o user é `root` e a senha é `123`. Você pode alterar essas informações
+**Por padrão o user é `juca` e a senha é `123`. Você pode alterar essas informações
 no arquivo `./config/db.js`**
 
 ```mysql
