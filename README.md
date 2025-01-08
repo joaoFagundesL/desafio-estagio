@@ -1,3 +1,25 @@
+# Implementação da API
+
+A API foi desenvolvida utilizando o **Express.js** e oferece as seguintes operações principais:
+
+- **Criar post**
+- **Remover post**
+- **Listar todos os posts**
+- **Listar post por ID**
+- **Atualizar post**
+
+O banco de dados utilizado para armazenar os dados foi o **MySQL**, garantindo uma gestão eficiente e escalável das informações.
+
+## Decisões Técnicas
+
+1. **Filtragem por Data**: A filtragem de posts por data foi implementada diretamente no MySQL, utilizando consultas SQL específicas. Isso simplifica o processo e melhora o desempenho, já que a lógica de filtragem é executada no banco de dados, reduzindo a carga no servidor.
+
+2. **Tela de Atualização de Post**: A tela de atualização de post reutiliza a tela de criação de posts. Ao selecionar um post, o **ID** é passado pela URL. No lado do cliente, com o auxílio de JavaScript, é verificado se o **ID** está presente na URL. Caso positivo, a operação realizada é uma atualização. Essa abordagem permite a reutilização de código e evita a necessidade de criar uma tela separada para a atualização, simplificando a manutenção e o desenvolvimento.
+
+## Aprendizado
+
+- **Integração entre Frontend e Backend**: Integrar mais eficazmente o frontend com o backend, especialmente utilizando o **JavaScript** para manipulação da URL e para alternar entre operações de criação e atualização de posts.
+
 # Demo
 
 [Funcionamento](./demo.mkv)
