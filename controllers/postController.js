@@ -102,4 +102,86 @@ const createPost = async (req, res) => {
   }
 };
 
-module.exports = { getPosts, getPostById, createPost };
+//UPDATE post
+const updatePost = async (req, res) => {
+  try {
+    const postId = req.params.id;
+
+    if (!postId) {
+      return res.status(404).send({
+        success: false,
+        message: "Invalid id :(",
+      });
+    }
+
+    const { title, body } = req.body;
+
+    if (!title || !body) {
+      return res.status(500).send({
+        success: false,
+        message: "There was an error updating the data :(",
+      });
+    }
+
+    const data = await db.query(
+      `UPDATE Blog SET title = ?, body = ? WHERE idBlog = ?`,
+      [title, body, postId],
+    );
+
+    if (data[0].affectedRows === 0) {
+      return res.status(500).send({
+        success: false,
+        message: "There was an error updating the data :(",
+      });
+    }
+
+    res.status(200).send({
+      success: true,
+      message: "Updated successfully :)",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      success: false,
+      message: "Error updating post :(",
+      err,
+    });
+  }
+};
+
+//DELETE post
+const deletePost = async (req, res) => {
+  console.log("hi");
+  try {
+    const postId = req.params.id;
+    if (!postId) {
+      return res.status(404).send({
+        success: false,
+        message: "Invalid id!",
+      });
+    }
+
+    const data = await db.query(`DELETE FROM Blog WHERE idBlog = ?`, [postId]);
+
+    if (data[0].affectedRows === 0) {
+      return res.status(500).send({
+        success: false,
+        message: "There was an error updating the data :(",
+      });
+    }
+
+    res.status(200).send({
+      success: true,
+      message: "Post successfully removed :)",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      success: false,
+      message: "Error deleting post :(",
+      err,
+    });
+  }
+};
+
+module.exports = { getPosts, getPostById, createPost, updatePost, deletePost };

@@ -3,6 +3,8 @@ const {
   getPosts,
   getPostById,
   createPost,
+  updatePost,
+  deletePost,
 } = require("../controllers/postController");
 
 const router = express.Router();
@@ -17,6 +19,9 @@ router.get("/list/:id", getPostById);
 router.post("/create", createPost);
 
 //DELETE post
+router.delete("/delete/:id", deletePost);
 
 //UPDATE post
+router.put("/update/:id", updatePost);
+
 module.exports = router;
